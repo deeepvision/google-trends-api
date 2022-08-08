@@ -1,5 +1,5 @@
 {
-  "name": "@deepvision/google-trends-api",
+  "name": "@deeepvision/google-trends-api",
   "version": "4.9.2",
   "description": "an API layer on top of google trends",
   "main": "lib/google-trends-api.min.js",
