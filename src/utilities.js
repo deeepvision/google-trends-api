@@ -221,17 +221,26 @@ export function getInterestResults(request) {
       },
     };
 
+    const req = {
+      comparisonItem: formatComparisonItems(obj),
+      category: obj.category,
+      property: obj.property,
+    };
+    const includeLowSearchVolumeGeos = (obj.includeLowSearchVolumeGeos) ?
+        obj.includeLowSearchVolumeGeos : false;
+
+    if (searchType === 'Interest by region' &&
+        obj.resolution === 'CITY') {
+      req.includeLowSearchVolumeGeos = includeLowSearchVolumeGeos;
+    }
+
     const options = {
       method: 'GET',
       host: 'trends.google.com',
       path: '/trends/api/explore',
       qs: {
         hl: obj.hl,
-        req: JSON.stringify({
-          comparisonItem: formatComparisonItems(obj),
-          category: obj.category,
-          property: obj.property,
-        }),
+        req: JSON.stringify(req),
         tz: obj.timezone,
       },
     };
@@ -269,6 +278,11 @@ export function getInterestResults(request) {
       if (resolution) req.resolution = resolution;
       req.requestOptions.category = obj.category;
       req.requestOptions.property = obj.property;
+
+      if (searchType === 'Interest by region' &&
+          obj.resolution === 'CITY') {
+        req.includeLowSearchVolumeGeos = includeLowSearchVolumeGeos;
+      }
       req = JSON.stringify(req);
 
       const nextOptions = {
