@@ -14,11 +14,16 @@
     "coverage": "nyc mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
     "preversion": "npm run build",
     "lint:eslint": "eslint src, test",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm version patch -m \"release: %s\" && npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pat310/google-trends-api.git"
+    "url": "https://github.com/deeepvision/nest-kit"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "google",
