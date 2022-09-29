@@ -34,5 +34,3 @@ testFile.js
 
 # ignore webstorm files
 .idea
-
-lib
