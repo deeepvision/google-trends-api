@@ -39,7 +39,8 @@
     "url": "https://github.com/pat310/google-trends-api/issues"
   },
   "files": [
-    "src/*"
+    "src/*",
+    "lib/*"
   ],
   "homepage": "https://github.com/pat310/google-trends-api#readme",
   "dependencies": {},
