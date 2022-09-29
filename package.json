@@ -2,7 +2,7 @@
   "name": "@deeepvision/google-trends-api",
   "version": "4.9.3",
   "description": "an API layer on top of google trends",
-  "main": "lib/google-trends-api.min.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "webpack --mode=build",
     "dev": "webpack --progress --colors --watch --mode=dev",
