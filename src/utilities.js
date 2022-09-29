@@ -290,6 +290,8 @@ export function getInterestResults(request) {
         method: 'GET',
         host: 'trends.google.com',
         qs: {
+          // @see https://developers.google.com/analytics/devguides/reporting/mcf/v3/parameters?hl=ru
+          quotaUser: Date.now().toString(),
           hl: obj.hl,
           req,
           token,
